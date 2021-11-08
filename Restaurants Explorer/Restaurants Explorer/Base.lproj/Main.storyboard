@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="omD-cd-rrF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Restaurants_Explorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="stO-4J-p0t">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="stO-4J-p0t" secondAttribute="trailing" id="L34-jJ-yjS"/>
+                            <constraint firstItem="stO-4J-p0t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NNE-HV-8gJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="stO-4J-p0t" secondAttribute="bottom" id="YDV-ec-uWX"/>
+                            <constraint firstItem="stO-4J-p0t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="f3S-xG-ugn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dhP-A8-DAi"/>
+                    <connections>
+                        <outlet property="tableView" destination="stO-4J-p0t" id="ov2-DL-0mi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1797.1014492753625" y="63.616071428571423"/>
+        </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="NvB-0K-vwB">
+            <objects>
+                <viewController storyboardIdentifier="FilterViewController" id="exw-zH-PE2" customClass="FilterViewController" customModule="Restaurants_Explorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EE4-6y-66K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YlW-91-X4B">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Tjr-RT-Wxo"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="cancel" id="6i0-B9-cCh">
+                                        <connections>
+                                            <action selector="cancelTapped:" destination="exw-zH-PE2" id="iYK-d5-aQA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="2pp-Dt-WbN"/>
+                                    <barButtonItem systemItem="done" id="dwB-o8-mue">
+                                        <connections>
+                                            <action selector="DoneTapped:" destination="exw-zH-PE2" id="lvu-xR-nMA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XIF-wj-N3p">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LNF-mB-5FD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YlW-91-X4B" firstAttribute="top" secondItem="LNF-mB-5FD" secondAttribute="top" id="BSJ-9L-BzI"/>
+                            <constraint firstItem="YlW-91-X4B" firstAttribute="trailing" secondItem="LNF-mB-5FD" secondAttribute="trailing" id="CrL-St-zjH"/>
+                            <constraint firstItem="XIF-wj-N3p" firstAttribute="centerX" secondItem="LNF-mB-5FD" secondAttribute="centerX" id="GuN-n8-BAp"/>
+                            <constraint firstItem="YlW-91-X4B" firstAttribute="leading" secondItem="LNF-mB-5FD" secondAttribute="leading" id="PeI-dH-2zh"/>
+                            <constraint firstItem="LNF-mB-5FD" firstAttribute="bottom" secondItem="XIF-wj-N3p" secondAttribute="bottom" id="XE6-ir-KrD"/>
+                            <constraint firstItem="LNF-mB-5FD" firstAttribute="trailing" secondItem="XIF-wj-N3p" secondAttribute="trailing" id="fnU-eA-aBB"/>
+                            <constraint firstItem="XIF-wj-N3p" firstAttribute="leading" secondItem="EE4-6y-66K" secondAttribute="leading" id="jPV-QK-dee"/>
+                            <constraint firstItem="XIF-wj-N3p" firstAttribute="top" secondItem="YlW-91-X4B" secondAttribute="bottom" id="ohx-OC-7rW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lWU-ly-14o"/>
+                    <connections>
+                        <outlet property="pickerView" destination="XIF-wj-N3p" id="jCW-j0-6Zb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efG-eA-b4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2837.68115942029" y="63.616071428571423"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wfg-lq-hL6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="omD-cd-rrF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LLs-68-yXA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="XlD-iM-Fw1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7tz-Wz-eDe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886.95652173913049" y="63.616071428571423"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
