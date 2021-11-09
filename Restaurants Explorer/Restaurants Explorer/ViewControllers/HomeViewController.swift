@@ -1,4 +1,4 @@
-//
+ //
 //  ViewController.swift
 //  Restaurants Explorer
 //
@@ -197,7 +197,21 @@ extension HomeViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        showError(message: error.localizedDescription)
+        DispatchQueue.main.async { [unowned self] in
+            let alertController = UIAlertController(title: "Error", message: "Please enable location in settings", preferredStyle: .alert)
+            let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+                
+                guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+                guard UIApplication.shared.canOpenURL(url) else { return }
+                UIApplication.shared.open(url)
+                
+            }
+            alertController.addAction(settingsAction)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+            alertController.addAction(cancelAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 }
 
